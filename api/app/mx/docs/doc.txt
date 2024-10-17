@@ -1,0 +1,47 @@
+. MVC
+. Professional UI
+. Data Base
+. App Security
+. Solves business problem
+
+. Software Requirement Specification:
+- write down all the features and benefits you want to have and the details needed
+
+*    *    *    SDS FXDUP    *    *    *
+- Select from the available datasets to retrieve wanted information
+- S&P,
+    - divide each feature into 1 week sprints
+        * create UI
+        * build out Database
+    - track progress of project
+    - use your own bug tracker to track your
+       own bugs
+
+bug/issue tracker
+track defects through software
+
+
+___________________________________________________________
+DJANGOTES
+
+* App:  web application composed of a set of models (database tables), views, templates, and tests
+
+* Project: collection of configuration and apps (can be 1 or more Apps)
+    - simple sites (blog) can be written entirely in a single apps
+
+* models.py: here is where we define the entities of our Web application. The models are translated automatically by Django into database tables.
+
+* views.py: Python functions that receive an HttpRequest object and return an HttpResponse object. Receive a request as a parameter and returns a response as a result. That’s the flow you have to keep in mind!
+    -  we have to tell Django when to serve this view. It’s done inside the urls.py file:
+
+* urls.py: tell Django when to serve the view
+
+    from boards import views
+    urlpatterns = [
+    url(r'^$', views.home, name='home'),
+    ]
+
+    - import the views module from app boards
+    - django works with regex to match the requested url
+    - ^$ regex = match any empty path
+    - match url, localhost:8000/homepage = url(r'^homepage/$', views.home, name = 'home')

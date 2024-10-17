@@ -1,0 +1,150 @@
+{
+    "BEAAPI": {
+        "Request": {
+            "RequestParam": [
+                {
+                    "ParameterName": "USERID",
+                    "ParameterValue": "3E3FEA04-8AF1-4A81-B447-50D58B30FB2D"
+                },
+                {
+                    "ParameterName": "METHOD",
+                    "ParameterValue": "GETPARAMETERVALUES"
+                },
+                {
+                    "ParameterName": "DATASETNAME",
+                    "ParameterValue": "INTLSERVTRADE"
+                },
+                {
+                    "ParameterName": "PARAMETERNAME",
+                    "ParameterValue": "TRADEDIRECTION"
+                },
+                {
+                    "ParameterName": "RESULTFORMAT",
+                    "ParameterValue": "JSON"
+                }
+            ]
+        },
+        "Results": {
+            "ParamValue": [
+                {
+                    "Key": "Balance",
+                    "Desc": "Balance"
+                },
+                {
+                    "Key": "Exports",
+                    "Desc": "Exports"
+                },
+                {
+                    "Key": "Imports",
+                    "Desc": "Imports"
+                },
+                {
+                    "Key": "SupplementalIns",
+                    "Desc": "Supplemental detail on insurance transactions"
+                }
+            ]
+        }
+    }
+}{
+    "BEAAPI": {
+        "Request": {
+            "RequestParam": [
+                {
+                    "ParameterName": "USERID",
+                    "ParameterValue": "3E3FEA04-8AF1-4A81-B447-50D58B30FB2D"
+                },
+                {
+                    "ParameterName": "METHOD",
+                    "ParameterValue": "GETPARAMETERVALUES"
+                },
+                {
+                    "ParameterName": "DATASETNAME",
+                    "ParameterValue": "INTLSERVTRADE"
+                },
+                {
+                    "ParameterName": "PARAMETERNAME",
+                    "ParameterValue": "TRADEDIRECTION"
+                },
+                {
+                    "ParameterName": "NONE",
+                    "ParameterValue": ""
+                },
+                {
+                    "ParameterName": "RESULTFORMAT",
+                    "ParameterValue": "JSON"
+                }
+            ]
+        },
+        "Results": {
+            "ParamValue": [
+                {
+                    "Key": "Balance",
+                    "Desc": "Balance"
+                },
+                {
+                    "Key": "Exports",
+                    "Desc": "Exports"
+                },
+                {
+                    "Key": "Imports",
+                    "Desc": "Imports"
+                },
+                {
+                    "Key": "SupplementalIns",
+                    "Desc": "Supplemental detail on insurance transactions"
+                }
+            ]
+        }
+    }
+}{
+    "BEAAPI": {
+        "Request": {
+            "RequestParam": [
+                {
+                    "ParameterName": "USERID",
+                    "ParameterValue": "3E3FEA04-8AF1-4A81-B447-50D58B30FB2D"
+                },
+                {
+                    "ParameterName": "METHOD",
+                    "ParameterValue": "GETPARAMETERVALUES"
+                },
+                {
+                    "ParameterName": "DATASETNAME",
+                    "ParameterValue": "INTLSERVTRADE"
+                },
+                {
+                    "ParameterName": "PARAMETERNAME",
+                    "ParameterValue": "TRADEDIRECTION"
+                },
+                {
+                    "ParameterName": "NONE",
+                    "ParameterValue": ""
+                },
+                {
+                    "ParameterName": "RESULTFORMAT",
+                    "ParameterValue": "JSON"
+                }
+            ]
+        },
+        "Results": {
+            "ParamValue": [
+                {
+                    "Key": "Balance",
+                    "Desc": "Balance"
+                },
+                {
+                    "Key": "Exports",
+                    "Desc": "Exports"
+                },
+                {
+                    "Key": "Imports",
+                    "Desc": "Imports"
+                },
+                {
+                    "Key": "SupplementalIns",
+                    "Desc": "Supplemental detail on insurance transactions"
+                }
+            ]
+        }
+    }
+}

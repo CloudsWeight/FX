@@ -1,0 +1,42 @@
+Fed API
+https://markets.newyorkfed.org/static/docs/markets-api.html
+
+Agency Mortgage-Backend Securites Operations
+/api/fxs/{operationType}/search.{format}
+/api/ambs/{operation}/results/{include}/lastTwoWeeks.{format}
+/api/ambs/{operation}/results/{include}/last/{number}.{format}
+/api/ambs/{operation}/results/{include}/search.{format}
+
+CB Liquidity Swaps
+/api/fxs/{operationType}/latest.{format}
+/api/fxs/{operationType}/last/{number}.{format}'
+/api/fxs/{operationType}/search.{format}
+/api/fxs/{operationType}/search.{format}
+
+Guide Sheets
+/api/guidesheets/{guideSheettypes}/latest.json
+/api/guidesheets/{guidesheetType}/previous.{format}
+
+Primary Dealer Statistics
+/api/pd/latest/{seriesbreak}.{format
+/api/pd/get/all/timeseries.csv
+/api/pd/list/timeseries.{format}
+/api/pd/list/asof.{format}
+/api/pd/get/{timeseries}.{format}
+/api/pd/get/{seriesbreak}/timeseries/{timeseries}.{format}
+
+Primary Dealer Market Share
+/api/marketshare/qtrly/latest.{format}
+/api/marketshare/ytd/latest.{format}
+
+Reference Rates
+/api/rates/all/latest.{format}
+/api/rates/all/search.{format}
+/api/rates/secured/all/latest.{format}
+/api/rates/secured/{ratetype}/last/{number}.{format}
+/api/rates/secured/{ratetype}/search.{format}
+/api/rates/unsecured/all/latest.{format}
+/api/rates/unsecured/{ratetype}/last/{number}.{format}
+/api/rates/unsecured/{ratetype}/search.{format}
+
+
