@@ -1,16 +1,18 @@
 FROM node:23-bookworm
 
 
-# Run the application as a non-root user.
-USER node
+RUN useradd -m -d /home/new_user new_user
+# change the uid of new_user to ensure it has whatever it was assigned plus 1 (e.g. if UID was 1000, now it'll be 1001)
+RUN id -u new_user | awk '{print $1+1}' | xargs -I{} usermod -u {} new_user
 
 # Copy the rest of the source files into the image.
-COPY /app .
 
+COPY /app .
+#RUN sudo chown -R $(id -u):$(id -g) ~/.npm
 
 # Expose the port that the application listens on.
 EXPOSE 43451
-CMD ["cd", "/app"]
-CMD ["npm", "install"]
-CMD ["node", "server.cjs"]
-CMD ["python", "main.py"]
+
+RUN npm install --force --loglevel verbos
+CMD node server.cjs
+
