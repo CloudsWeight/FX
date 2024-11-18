@@ -16,6 +16,6 @@ COPY /app .
 # Expose the port that the application listens on.
 EXPOSE 43451
 
-RUN npm install --force --loglevel verbos
+RUN npm install --force --loglevel verbose
 CMD node server.cjs
 
