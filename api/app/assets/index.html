@@ -14,7 +14,7 @@
       const fxData = JSON.parse(data);
       const fxPair = fxData.instrument;
       const fxCndls = fxData.candles;
-      document.getElementById("uj").innerText = 'USDJPY: ' + fxCndls[2].mid.c;
+      //document.getElementById("uj").innerText = 'USDJPY: ' + fxCndls[2].mid.c;
       console.log(JSON.stringify(fxData));
     })
     .catch((error) => {
@@ -25,7 +25,7 @@
 function getNews() {
     fetch('/api/getNews', {
       method: 'GET'})
-    .then(response => response.content())
+    .then(response => response.text())
     .then(data => {
       const el = document.getElementById('datael');
       const fxNews = JSON.parse(data);
@@ -51,11 +51,13 @@ setInterval(getRates, 3000);
   <div class="navbar">
    <div><button><a href="/assets/test">Digital Mag</a></button></div>
    <br>
-   <div><button onclick="getRates()">Get Rates</button></div>
+   <div><button onclick="getNews()">Get Rates</button></div>
    <br>
    <div><button onclick="getNews()">Get News</button></div>
  </div>
  <div id="datael"><div style="width: 1139px;"><canvas id="chart"></canvas></div></div>
+ <div id="root"></div>
+ <script src="index.jsx" type="module"></script>
 </div>
 </body>
 </html>
