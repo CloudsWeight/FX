@@ -1,10 +1,12 @@
-
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 43451;
 const { spawn } = require('child_process');
-
+const cors = require('cors');
+require('dotenv').config();
+const PORT = process.env.PORT || 43451;
+app.use(cors());
+app.use(express.json());
 app.listen(PORT, (error) => 
 {
 	if(!error)
@@ -19,10 +21,26 @@ app.get("/assets/get_waves.js", function(req, res)
 app.get("/assets/test", function(req, res) 
 {
 	res.sendFile(__dirname + '/assets/test.html');});
-7292
+
 app.get('/api/getRates', (req, res) => {
 	//const result = console.log('function called', req.body);
-	const pyProc = spawn('python', ['./assets/OandaFile.py']);
+	const pyProc = spawn('python3', ['./assets/get_news.py']);
+	pyProc.stdout.on('data', (data) => {
+		console.log(data);
+		res.json(data.toString());
+	});
+	pyProc.stderr.on('data', (error) => {
+		console.error(error.toString());
+		res.status(500).json(error.toString());
+	});
+	pyProc.on('close', (data) =>{
+		console.log('close');
+	});
+});
+
+app.get('/api/getNews', (req, res) => {
+	//const result = console.log('function called', req.body);
+	const pyProc = spawn('python3', ['./assets/get_news.py']);
 	pyProc.stdout.on('data', (data) => {
 		console.log(data);
 		res.json(data.toString());
@@ -36,23 +54,7 @@ app.get('/api/getRates', (req, res) => {
 	});
 });
 
-app.get('/api/getNews', (req, res) => {
-	//const result = console.log('function called', req.body);
-	const pyProc = spawn('python', ['./assets/get_news.py']);
-	pyProc.stdout.on('data', (data) => {
-		console.log(data);
-		//res.json(data.toString());
-	});
-	pyProc.stderr.on('data', (data) => {
-		console.error(data);
-		res.status(500).json(data.toString());
-	});
-	pyProc.on('close', (data) =>{
-		console.log('close');
-	});
-});
 
-app.get
 app.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname, '/assets/index.html'));
 });	
