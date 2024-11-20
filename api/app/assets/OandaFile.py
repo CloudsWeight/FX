@@ -1,30 +1,15 @@
-'''
-################################################################################################################################
-#                                                                                                                              # 
-#                                                                                   :                                          #
-#           .                             ,;                                       t#,     L.                     ,;           #
-#          ;W          j.               f#i                                       ;##W.    EW:        ,ft       f#i            #
-#         f#E GEEEEEEELEW,            .E#t             ..           ..       :   :#L:WE    E##;       t#E     .E#t  f.     ;WE.#
-#       .E#f  ,;;L#K;;.E##j          i#W,             ;W,          ,W,     .Et  .KG  ,#D   E###t      t#E    i#W,   E#,   i#G  #
-#      iWW;      t#E   E###D.       L#D.             j##,         t##,    ,W#t  EE    ;#f  E#fE#f     t#E   L#D.    E#t  f#f   #
-#     L##Lffi    t#E   E#jG#W;    :K#Wfff;          G###,        L###,   j###t f#.     t#i E#t D#G    t#E :K#Wfff;  E#t G#i    #
-#    tLLG##L     t#E   E#t t##f   i##WLLLLt       :E####,      .E#j##,  G#fE#t :#G     GK  E#t  f#E.  t#E i##WLLLLt E#jEW,     #
-#      ,W#i      t#E   E#t  :K#E:  .E#L          ;W#DG##,     ;WW; ##,:K#i E#t  ;#L   LW.  E#t   t#K: t#E  .E#L     E##E.      #
-#     j#E.       t#E   E#KDDDD###i   f#E:       j###DW##,    j#E.  ##f#W,  E#t   t#f f#:   E#t    ;#W,t#E    f#E:   E#G        #
-#   .D#j         t#E   E#f,t#Wi,,,    ,WW;     G##i,,G##,  .D#L    ###K:   E#t    f#D#;    E#t     :K#D#E     ,WW;  E#t        #
-#  ,WK,          t#E   E#t  ;#W:       .D#;  :K#K:   L##, :K#t     ##D.    E#t     G#t     E#t      .E##E      .D#; E#t        #
-#  EG.            fE   DWi   ,KK:        tt ;##D.    L##, ...      #G      ..       t      ..         G#E        tt EE.        #
-#  ,               :                        ,,,      .,,           j                                   fE           t          #
-#                                                                                                       ,                      #
-################################################################################################################################
-'''
+
 import requests
 import json 
 import csv
-from accts import accts
-from secret import SECRET 
 import argparse
 from datetime import datetime 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+SECRET = os.environ['SECRET']
+ACCTS = os.environ["ACCTS"]
 
 class OandaApp():
 	def __init__(self, token=None, account=None):
@@ -37,8 +22,8 @@ class OandaApp():
 					}
 		self.account = {
 					'URL':f'{self.BASE_URL}/v3/accounts', # Accounts Endpoint
-					'acctId': accts,
-					'current':f'{accts[0]}'
+					'acctId': ACCTS,
+					'current':f'{ACCTS[0]}'
 						}
 		#if token is None:
 			#self.token = SECRET
